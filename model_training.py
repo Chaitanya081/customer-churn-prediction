@@ -13,7 +13,7 @@ le = LabelEncoder()
 for col in df.select_dtypes(include="object").columns:
     df[col] = le.fit_transform(df[col])
 
-# Split features and target
+# Separate features and target
 X = df.drop("Churn", axis=1)
 y = df["Churn"]
 
@@ -21,7 +21,7 @@ y = df["Churn"]
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Train-test split
+# Split data
 X_train, X_test, y_train, y_test = train_test_split(
     X_scaled, y, test_size=0.2, random_state=42
 )
@@ -34,8 +34,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("Model Accuracy:", accuracy_score(y_test, y_pred))
 
-# Save model and scaler
+# ✅ SAVE FILES (IMPORTANT)
 pickle.dump(model, open("churn_model.pkl", "wb"))
 pickle.dump(scaler, open("scaler.pkl", "wb"))
 
-print("✅ Model and scaler saved successfully!")
+print("✅ churn_model.pkl and scaler.pkl CREATED SUCCESSFULLY")
