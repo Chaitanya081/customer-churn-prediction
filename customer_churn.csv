@@ -1,0 +1,7 @@
+Gender,SeniorCitizen,Tenure,MonthlyCharges,TotalCharges,Contract,InternetService,PaymentMethod,Churn
+Male,No,12,70.5,845.0,Month-to-month,DSL,Credit Card,No
+Female,Yes,2,89.1,178.2,Month-to-month,Fiber optic,Electronic Check,Yes
+Female,No,24,55.2,1324.8,One year,DSL,Bank Transfer,No
+Male,No,1,95.4,95.4,Month-to-month,Fiber optic,Electronic Check,Yes
+Male,Yes,36,45.0,1620.0,Two year,No,Credit Card,No
+Female,No,6,80.0,480.0,Month-to-month,DSL,Electronic Check,Yes
