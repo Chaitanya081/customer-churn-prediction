@@ -1,14 +1,19 @@
 # Customer Churn Prediction Using Machine Learning
 
-This project predicts whether a customer is likely to churn using machine learning
-and provides a web interface using Streamlit.
+This project predicts whether a customer will churn using a machine learning model
+and provides a Streamlit based web application.
 
-## Files
-- model_training.py – trains and saves the ML model
-- app.py – Streamlit web application
-- churn_model.pkl – trained model
-- scaler.pkl – data scaler
+## Project Files
+- model_training.py : Trains and saves the ML model
+- app.py : Streamlit web app
+- customer_churn.csv : Dataset
+- churn_model.pkl : Trained model
+- scaler.pkl : Feature scaler
 
 ## How to Run
 
-1. Train the model
+### 1. Train the model
+python model_training.py
+
+### 2. Run the Streamlit app
+streamlit run app.py
