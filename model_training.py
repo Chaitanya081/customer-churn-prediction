@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score
 import pickle
 
 # Load dataset
-df = pd.read_csv("customer_churn.csv")   # Dataset should be in the same folder
+df = pd.read_csv("customer_churn.csv")
 
 # Encode categorical columns
 le = LabelEncoder()
@@ -17,7 +17,7 @@ for col in df.select_dtypes(include="object").columns:
 X = df.drop("Churn", axis=1)
 y = df["Churn"]
 
-# Feature scaling
+# Scale features
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
@@ -32,11 +32,10 @@ model.fit(X_train, y_train)
 
 # Evaluate model
 y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-print("Model Accuracy:", accuracy)
+print("Model Accuracy:", accuracy_score(y_test, y_pred))
 
 # Save model and scaler
 pickle.dump(model, open("churn_model.pkl", "wb"))
 pickle.dump(scaler, open("scaler.pkl", "wb"))
 
-print("Model and scaler saved successfully!")
+print("✅ Model and scaler saved successfully!")
